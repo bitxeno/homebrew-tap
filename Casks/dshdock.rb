@@ -3,7 +3,7 @@
 
 cask "dshdock" do
   version "0.1.2"
-  sha256 "62ebb4f9bd3b4fb0940f648980b9b80ecd52835089bc82a6b1602b7daf032a90"
+  sha256 "d8b58f9bdc41c3315a3792da3ca53c3c145407b46cbdf1136a75028876b34e08"
 
   url "https://github.com/bitxeno/dsh-dock/releases/download/v0.1.2/DshDock-0.1.2.dmg"
   name "DshDock"
