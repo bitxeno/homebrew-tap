@@ -17,7 +17,7 @@ cask "dshdock" do
   # 构建未公证（ad-hoc 签名）：装完立即去隔离，免掉首启的 Gatekeeper 拦截。
   # 直接从 Release 下载 DMG 的用户不走这条路径，caveats 里保留手动方法。
   postflight_steps do
-    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "DshDock.app"], base: :appdir
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/DshDock.app"]
   end
 
   caveats <<~EOS
