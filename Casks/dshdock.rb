@@ -10,11 +10,13 @@ cask "dshdock" do
   desc "Desktop shell hosting managed dsh web"
   homepage "https://github.com/bitxeno/dsh-dock"
 
+  depends_on macos: :sequoia
+
   app "DshDock.app"
 
   # 构建未公证（ad-hoc 签名）：装完立即去隔离，免掉首启的 Gatekeeper 拦截。
   # 直接从 Release 下载 DMG 的用户不走这条路径，caveats 里保留手动方法。
-  postflight do
+  postflight_steps do
     system_command "/usr/bin/xattr",
                    args: ["-dr", "com.apple.quarantine", "#{appdir}/DshDock.app"]
   end
