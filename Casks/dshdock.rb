@@ -2,20 +2,21 @@
 # frozen_string_literal: true
 
 cask "dshdock" do
-  version "0.1.0"
-  sha256 "ca26b10c5feb11b732819faca5b99201d6c400e2c30feff9c256813dd7554be7"
+  version "0.1.1"
+  sha256 "f2b7954469c74a8ed528cee03fbe862c12261b2a926ecfd95b6b5e09e75f5c44"
 
-  url "https://github.com/bitxeno/dsh-dock/releases/download/v0.1.0/DshDock-0.1.0.dmg"
+  url "https://github.com/bitxeno/dsh-dock/releases/download/v0.1.1/DshDock-0.1.1.dmg"
   name "DshDock"
   desc "Desktop shell hosting managed dsh web"
   homepage "https://github.com/bitxeno/dsh-dock"
-
-  depends_on macos: :sequoia
 
   app "DshDock.app"
 
   # 构建未公证（ad-hoc 签名）：装完立即去隔离，免掉首启的 Gatekeeper 拦截。
   # 直接从 Release 下载 DMG 的用户不走这条路径，caveats 里保留手动方法。
+  # 新 install-steps DSL 的坑（全部实测）：路径要用 {{appdir}} 模板标记
+  # （Ruby 插值 #{appdir} 在块内未定义、相对路径不锚定 base、cop 只认
+  # 纯字符串参数），块内只允许 run 等步骤调用。
   postflight_steps do
     run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/DshDock.app"]
   end
