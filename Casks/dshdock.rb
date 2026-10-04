@@ -2,10 +2,10 @@
 # frozen_string_literal: true
 
 cask "dshdock" do
-  version "0.1.4"
-  sha256 "dd8d8595710b3579e94ab728846b2a28aa1da8b1ecd92055995fca63a1121096"
+  version "0.1.5"
+  sha256 "7ac7a60b8ba4f9d1fc6710b78040e154f71eebff26f8c1595361fc1cec24869b"
 
-  url "https://github.com/bitxeno/dsh-dock/releases/download/v0.1.4/DshDock-0.1.4.dmg"
+  url "https://github.com/bitxeno/dsh-dock/releases/download/v0.1.5/DshDock-0.1.5.dmg"
   name "DshDock"
   desc "Desktop shell hosting managed dsh web"
   homepage "https://github.com/bitxeno/dsh-dock"
