@@ -5,7 +5,7 @@ cask "guguclip" do
 arch arm: "arm64", intel: "amd64"
 
     version "0.3.0"
-    sha256 arm: "f48591f01cc28c97e1b7fd66584919066b3e66f7b8c5fd40b87727634bdcea26", intel: "a3765dc0e8914804d8f469272828a7d2583ff70266c94071c702ec4e0737723e"
+    sha256 arm: "22618bb4d7598d4dbfdcfc9944570df4e20418bc0c2a5c5f1d8cf83ab78e9896", intel: "58290f6eb62b0e6f1c37fc4d575d2e1eac29ff70e8ba51642c8906f3588a7d60"
 
     url "https://github.com/bitxeno/GuguClip/releases/download/v0.3.0/GuguClip-0.3.0-darwin-#{arch}.zip"
   name "GuguClip"
