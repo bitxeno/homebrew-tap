@@ -4,10 +4,18 @@
 cask "guguclip" do
 arch arm: "arm64", intel: "amd64"
 
-    version "0.3.0"
-    sha256 arm: "22618bb4d7598d4dbfdcfc9944570df4e20418bc0c2a5c5f1d8cf83ab78e9896", intel: "58290f6eb62b0e6f1c37fc4d575d2e1eac29ff70e8ba51642c8906f3588a7d60"
+    version "0.3.1"
+    sha256 arm: "11cb126141ffc4b7394ea4d9fd3d62d43a2fbbb6aec09883485caa6d3b23d23c", intel: "a92c3751a69fe1a029a67cd1c88912f494530c96b0f8391c4aa3f80b5723ad67"
 
-    url "https://github.com/bitxeno/GuguClip/releases/download/v0.3.0/GuguClip-0.3.0-darwin-#{arch}.zip"
+    if ENV["HOMEBREW_GITHUB_API_TOKEN"].to_s.empty?
+      url "https://github.com/bitxeno/GuguClip/releases/download/v0.3.1/GuguClip-0.3.1-darwin-#{arch}.zip"
+    else
+      url "https://api.github.com/repos/bitxeno/GuguClip/releases/assets/#{arch == "arm64" ? "611689707" : "611689708"}",
+        header: [
+          "Accept: application/octet-stream",
+          "Authorization: Bearer #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}",
+        ]
+    end
   name "GuguClip"
   desc "Menu-bar clipboard manager with LAN sync"
   homepage "https://github.com/bitxeno/GuguClip"
