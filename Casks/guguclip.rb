@@ -4,13 +4,13 @@
 cask "guguclip" do
 arch arm: "arm64", intel: "amd64"
 
-    version "0.3.4"
-    sha256 arm: "4acf34e74ed8c6b3808dbce651d2fd18bf5d73547d86dacdc698fe6d5fa50583", intel: "85a3be5290a7d40b93f970f334f87c3ab094d1aaaeb40f08b3c8d28b2a8a18fb"
+    version "0.3.5"
+    sha256 arm: "159a716fa94767dbef6268a7b13e53dbced48daccf375d7f4283439ee125056b", intel: "d9d886914fda19d03e43eae32691ebecfbc6a739254c28692a6d4eba01d24273"
 
     if ENV["HOMEBREW_GITHUB_API_TOKEN"].to_s.empty?
-      url "https://github.com/bitxeno/GuguClip/releases/download/v0.3.4/GuguClip-0.3.4-darwin-#{arch}.zip"
+      url "https://github.com/bitxeno/GuguClip/releases/download/v0.3.5/GuguClip-0.3.5-darwin-#{arch}.zip"
     else
-      url "https://api.github.com/repos/bitxeno/GuguClip/releases/assets/#{arch == "arm64" ? "615671447" : "615671448"}",
+      url "https://api.github.com/repos/bitxeno/GuguClip/releases/assets/#{arch == "arm64" ? "620535815" : "620535816"}",
         header: [
           "Accept: application/octet-stream",
           "Authorization: Bearer #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}",
