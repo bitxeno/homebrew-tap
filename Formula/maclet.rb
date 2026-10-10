@@ -5,30 +5,30 @@ class Maclet < Formula
   desc "Polite macOS automation CLI for coding agents"
   homepage "https://github.com/bitxeno/maclet-cli"
 
-  version "0.1.0"
+  version "0.1.1"
 
   if Hardware::CPU.arm?
     if ENV["HOMEBREW_GITHUB_API_TOKEN"].to_s.empty?
-      url "https://github.com/bitxeno/maclet-cli/releases/download/v0.1.0/maclet-0.1.0-darwin-arm64.tar.gz"
+      url "https://github.com/bitxeno/maclet-cli/releases/download/v0.1.1/maclet-0.1.1-darwin-arm64.tar.gz"
     else
-      url "https://api.github.com/repos/bitxeno/maclet-cli/releases/assets/626911690",
+      url "https://api.github.com/repos/bitxeno/maclet-cli/releases/assets/626920784",
           headers: [
             "Accept: application/octet-stream",
             "Authorization: Bearer #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}",
           ]
     end
-    sha256 "036cdb734f0e3722f0b4982341d68cf022c2f0fbec2493aaed29e6c43a4488e2"
+    sha256 "bd83002e6946d18ee248bc57d5ac783f66ff08658c2bb3c122143bf22cd97992"
   else
     if ENV["HOMEBREW_GITHUB_API_TOKEN"].to_s.empty?
-      url "https://github.com/bitxeno/maclet-cli/releases/download/v0.1.0/maclet-0.1.0-darwin-amd64.tar.gz"
+      url "https://github.com/bitxeno/maclet-cli/releases/download/v0.1.1/maclet-0.1.1-darwin-amd64.tar.gz"
     else
-      url "https://api.github.com/repos/bitxeno/maclet-cli/releases/assets/626911702",
+      url "https://api.github.com/repos/bitxeno/maclet-cli/releases/assets/626920788",
           headers: [
             "Accept: application/octet-stream",
             "Authorization: Bearer #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}",
           ]
     end
-    sha256 "8fb01761e8a170b8346e594e7736a6b3f1d0cdde4ba87e7423db95f8badbd209"
+    sha256 "2831ce4d1256e69b679b200510300dc88018753188c0f1f2e6e025c58e5d376b"
   end
 
   # macOS-only: maclet dlopens system frameworks in-process
