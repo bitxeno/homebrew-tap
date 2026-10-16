@@ -4,13 +4,13 @@
 cask "nanopad" do
 arch arm: "arm64", intel: "amd64"
 
-    version "0.4.0"
-    sha256 arm: "9386c2fe9a7dc09e36ef5000393204a84858ab82740596a01bd9f8ca00a6ed4f", intel: "1bb8b9a2cd01241ff1f7f0f9ebf2776df8a4d00887431b476d32d39607c4aec8"
+    version "0.5.0"
+    sha256 arm: "a396d8d588bffdc8b63b8b5f41b346ee051642b361b8b1f7f86e781cbc654e88", intel: "eb4583430eadc7f911c9aba324ab59068b220dd4240120e53fc7920fdde52625"
 
     if ENV["HOMEBREW_GITHUB_API_TOKEN"].to_s.empty?
-      url "https://github.com/bitxeno/NanoPad/releases/download/v0.4.0/NanoPad-0.4.0-darwin-#{arch}.zip"
+      url "https://github.com/bitxeno/NanoPad/releases/download/v0.5.0/NanoPad-0.5.0-darwin-#{arch}.zip"
     else
-      url "https://api.github.com/repos/bitxeno/NanoPad/releases/assets/#{arch == "arm64" ? "642644873" : "642644876"}",
+      url "https://api.github.com/repos/bitxeno/NanoPad/releases/assets/#{arch == "arm64" ? "646022305" : "646022306"}",
         header: [
           "Accept: application/octet-stream",
           "Authorization: Bearer #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}",
