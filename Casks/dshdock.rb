@@ -5,7 +5,15 @@ cask "dshdock" do
   version "0.1.11"
   sha256 "1e21590d26a6188bd58957bd2e33d2dfdc8c36e9b835e6e1a20f0b9e51536e3c"
 
-  url "https://github.com/bitxeno/dsh-dock/releases/download/v0.1.11/DshDock-0.1.11.dmg"
+  if ENV["HOMEBREW_GITHUB_API_TOKEN"].to_s.empty?
+    url "https://github.com/bitxeno/dsh-dock/releases/download/v0.1.11/DshDock-0.1.11.dmg"
+  else
+    url "https://api.github.com/repos/bitxeno/dsh-dock/releases/assets/655624378",
+        header: [
+          "Accept: application/octet-stream",
+          "Authorization: Bearer #{ENV.fetch("HOMEBREW_GITHUB_API_TOKEN", nil)}",
+        ]
+  end
   name "DshDock"
   desc "Desktop shell hosting managed dsh web"
   homepage "https://github.com/bitxeno/dsh-dock"
@@ -22,8 +30,10 @@ cask "dshdock" do
   end
 
   caveats <<~EOS
-    直接下载 DMG 安装（不经 Homebrew）时，构建未做公证（ad-hoc 签名），
-    首次启动若被 Gatekeeper 拦截：右键 App 选"打开"，或执行
+    仓库私有：装之前先 export HOMEBREW_GITHUB_API_TOKEN（对 dsh-dock 有
+    repo 读权限的 PAT），否则走公开直链会 404。配好后正常安装即可。
+    构建未做公证（ad-hoc 签名），首次启动若被 Gatekeeper 拦截：
+    右键 App 选"打开"，或执行
       xattr -dr com.apple.quarantine /Applications/DshDock.app
   EOS
 end
