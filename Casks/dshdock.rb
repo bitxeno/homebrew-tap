@@ -2,13 +2,13 @@
 # frozen_string_literal: true
 
 cask "dshdock" do
-  version "0.1.12"
-  sha256 "135ea702f305931d684ae959cea892f3fdc620b1a8e32c3fa989e1d9db6086e6"
+  version "0.1.13"
+  sha256 "e4a9ae72cf98f6ce8233b287569b1655dd4780e2b5618032307bef855994cbaa"
 
   if ENV["HOMEBREW_GITHUB_API_TOKEN"].to_s.empty?
-    url "https://github.com/bitxeno/dsh-dock/releases/download/v0.1.12/DshDock-0.1.12.dmg"
+    url "https://github.com/bitxeno/dsh-dock/releases/download/v0.1.13/DshDock-0.1.13.dmg"
   else
-    url "https://api.github.com/repos/bitxeno/dsh-dock/releases/assets/656312605",
+    url "https://api.github.com/repos/bitxeno/dsh-dock/releases/assets/676691931",
         header: [
           "Accept: application/octet-stream",
           "Authorization: Bearer #{ENV.fetch("HOMEBREW_GITHUB_API_TOKEN", nil)}",
