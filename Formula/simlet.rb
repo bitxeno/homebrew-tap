@@ -5,30 +5,30 @@ class Simlet < Formula
   desc "Agentless iOS/tvOS simulator automation CLI (HID + accessibility)"
   homepage "https://github.com/bitxeno/simlet-cli"
 
-  version "0.3.0"
+  version "0.3.1"
 
   if Hardware::CPU.arm?
     if ENV["HOMEBREW_GITHUB_API_TOKEN"].to_s.empty?
-      url "https://github.com/bitxeno/simlet-cli/releases/download/v0.3.0/simlet-0.3.0-darwin-arm64.tar.gz"
+      url "https://github.com/bitxeno/simlet-cli/releases/download/v0.3.1/simlet-0.3.1-darwin-arm64.tar.gz"
     else
-      url "https://api.github.com/repos/bitxeno/simlet-cli/releases/assets/644406951",
+      url "https://api.github.com/repos/bitxeno/simlet-cli/releases/assets/691960915",
           headers: [
             "Accept: application/octet-stream",
             "Authorization: Bearer #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}",
           ]
     end
-    sha256 "3170619d455f5a2eea73d0a7cd4d053f648677d2237c402bf3caa2c9ce048b43"
+    sha256 "d552a23c3cf729c11bcec7b4ff4d60a639c8d509ee12a532ae1cf78f26d35ce9"
   else
     if ENV["HOMEBREW_GITHUB_API_TOKEN"].to_s.empty?
-      url "https://github.com/bitxeno/simlet-cli/releases/download/v0.3.0/simlet-0.3.0-darwin-amd64.tar.gz"
+      url "https://github.com/bitxeno/simlet-cli/releases/download/v0.3.1/simlet-0.3.1-darwin-amd64.tar.gz"
     else
-      url "https://api.github.com/repos/bitxeno/simlet-cli/releases/assets/644406953",
+      url "https://api.github.com/repos/bitxeno/simlet-cli/releases/assets/691960914",
           headers: [
             "Accept: application/octet-stream",
             "Authorization: Bearer #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}",
           ]
     end
-    sha256 "5950b38f4ff47fee8379912c8795d4cab194ad3c6671110504307926493e93c5"
+    sha256 "01c6f4f2014a18a5a7873f8b7543fdb9c3aca995806a3ef86b31117f87bb3ce3"
   end
 
   # macOS-only: simlet dlopens Xcode's private SimulatorKit and
