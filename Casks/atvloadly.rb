@@ -2,10 +2,10 @@
 # frozen_string_literal: true
 
 cask "atvloadly" do
-  version "0.8.6"
-  sha256 "3c53584f2c763a86078d021853418eb224977c7d8b059c2ef754aef08eb94fae"
+  version "0.8.7"
+  sha256 "491cc1ec8c381148af64ed9f3aa17216d116c6d5c90b9624d7057c287a5176a5"
 
-  url "https://github.com/bitxeno/atvloadly/releases/download/v0.8.6/atvloadly-0.8.6.dmg"
+  url "https://github.com/bitxeno/atvloadly/releases/download/v0.8.7/atvloadly-0.8.7.dmg"
   name "atvloadly"
   desc "Sideload apps onto Apple TV devices"
   homepage "https://github.com/bitxeno/atvloadly"
